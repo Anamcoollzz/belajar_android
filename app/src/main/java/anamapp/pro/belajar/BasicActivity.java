@@ -6,10 +6,12 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import anamapp.pro.belajar.crud.DataActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class BasicActivity extends AppCompatActivity {
@@ -29,6 +31,23 @@ public class BasicActivity extends AppCompatActivity {
                 startActivity(intent);
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        Button tombolCrud = findViewById(R.id.tombolCrud);
+        tombolCrud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DataActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button nav = findViewById(R.id.navigationDrawer);
+        nav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
+                startActivity(intent);
             }
         });
     }
