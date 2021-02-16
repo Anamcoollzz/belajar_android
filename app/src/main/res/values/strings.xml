@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BELAJAR</string>
+    <string name="app_name">WAB Akber Broadcaster</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_basic">BasicActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -49,4 +49,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+    <string name="title_activity_place_auto_complete_custom">Map</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search here</string>
 </resources>

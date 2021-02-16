@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WhatsappActivity">
+
+<ImageView
+    android:scaleType="fitXY"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:src="@drawable/bg"
+    android:contentDescription="Background" />
+
+    <Button
+        android:id="@+id/btnKirim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey"
+        android:text="Mulai"
+        android:layout_margin="10dp"
+        android:paddingRight="40sp"
+        android:paddingLeft="40sp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnKirim2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputDelay"/>
+
+    <Button
+        android:id="@+id/btnTesting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorGrey"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:text="Testing"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@id/btnKirim2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputDelay"
+        app:layout_constraintVertical_bias="0.502" />
+
+    <Button
+        android:id="@+id/btnKirim2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorGrey"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:text="Mulai"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnKirim"
+        app:layout_constraintTop_toBottomOf="@id/inputDelay"
+        app:layout_constraintVertical_bias="0.502" />
+
+    <Button
+        android:id="@+id/btnAksesibilitas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey"
+        android:text="Buka Aksesibilitas"
+        android:textColor="#ffffff"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPanduan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnKirim2"/>
+
+    <Button
+        android:id="@+id/btnPanduan"
+        android:layout_width="0dp"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey"
+        android:text="Panduan"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAksesibilitas"
+        app:layout_constraintTop_toBottomOf="@id/btnKirim2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <EditText android:visibility="gone"
+        android:id="@+id/inputPesan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Halo"
+        app:layout_constraintBottom_toTopOf="@+id/btnKirim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText android:visibility="gone"
+        android:id="@+id/inputResponse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/inputPesan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:textSize="24dp"
+        android:textColor="@color/colorWhite"
+        android:textAlignment="center"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pastikanAksesibilitas"
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="@color/colorWhite"
+        android:id="@+id/pastikanAksesibilitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pastikan aksesibilitasnya hidup. Jika tidak terkirim otomatis maka restart saja aksesibilitasnya. Jika terjadi crash ketika memberhentikan broadcast, tutup saja aplikasinya. Jika ingin memulai lagi, restart aksesibilitasnya."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputJumlahPesan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textColor="@color/colorWhite"
+        android:id="@+id/inputJumlahPesan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Jumlah Pesan Yang Diambil: 0"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputDelay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pastikanAksesibilitas" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputDelay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Delay (ms)"
+        android:text="7000"
+        android:textColor="@color/colorWhite"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnKirim"
+        app:layout_constraintTop_toBottomOf="@+id/inputJumlahPesan"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="25dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
