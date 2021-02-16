@@ -1,5 +1,6 @@
 package anamapp.pro.belajar.services;
 
+import android.os.Build;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -24,7 +25,11 @@ public class WhatsAppBusinessAccessibilityService extends WhatAppAccessibilitySe
 
             // WA BUSTINESS
             // trigger send click button
-            event.getSource().getChild(9).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+//            Log.d("ANDROIDVERSION", Build.VERSION.RELEASE);
+            if (Build.VERSION.SDK_INT == 24 || Build.VERSION.SDK_INT == 25)
+                event.getSource().getChild(6).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+            else
+                event.getSource().getChild(9).performAction(AccessibilityNodeInfo.ACTION_CLICK);
 
             // WA BIASA
             // trigger send click
@@ -74,7 +79,7 @@ public class WhatsAppBusinessAccessibilityService extends WhatAppAccessibilitySe
             }
 
         } catch (Exception e) {
-            Log.e("kunnam", Objects.requireNonNull(e.getMessage()));
+            Log.e("kunnam error", Objects.requireNonNull(e.getMessage()));
         }
 
 

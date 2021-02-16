@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -72,6 +73,7 @@ public class WhatsappActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        Log.d("ANDROIDVERSION", String.valueOf(Build.VERSION.SDK_INT));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whatsapp);
 //        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.app_name);
