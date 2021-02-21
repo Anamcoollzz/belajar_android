@@ -13,8 +13,19 @@ public class WhatsAppBusinessAccessibilityService extends WhatAppAccessibilitySe
     public void onAccessibilityEvent(AccessibilityEvent event) {
         try {
             Log.e("kunnam", event.getPackageName().toString());
+            Thread.sleep(1000);
+//            Thread.sleep(3000); // hack for certain devices in which the immediate back click is too fast to handle
             for (int i = 0; i < event.getSource().getChildCount(); i++) {
-                Log.e("kunnam", event.getSource().getChild(i).toString());
+//                Log.e("kunnam", event.getSource().getChild(i).toString());
+                CharSequence contentDescription = event.getSource().getChild(i).getContentDescription();
+                if(contentDescription!=null){
+                    Log.e("kunnam", contentDescription.toString());
+                    if(contentDescription.toString().equalsIgnoreCase("Send")){
+                        event.getSource().getChild(i).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                    }
+                }else{
+                    Log.e("kunnam", "null");
+                }
             }
 
 //            if (getRootInActiveWindow() == null) {
@@ -23,13 +34,16 @@ public class WhatsAppBusinessAccessibilityService extends WhatAppAccessibilitySe
 //            AccessibilityNodeInfoCompat rootInActiveWindow = AccessibilityNodeInfoCompat.wrap(getRootInActiveWindow());
 //            List<AccessibilityNodeInfoCompat> messageNodeList = new ArrayList<>();
 
+//            Thread.sleep(2000);
             // WA BUSTINESS
             // trigger send click button
 //            Log.d("ANDROIDVERSION", Build.VERSION.RELEASE);
-            if (Build.VERSION.SDK_INT == 24 || Build.VERSION.SDK_INT == 25)
-                event.getSource().getChild(6).performAction(AccessibilityNodeInfo.ACTION_CLICK);
-            else
-                event.getSource().getChild(9).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+//            if (Build.VERSION.SDK_INT == 24 || Build.VERSION.SDK_INT == 25) {
+//                event.getSource().getChild(6).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+////                event.getSource().getChild(5).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+//            } else
+//                event.getSource().getChild(9).performAction(AccessibilityNodeInfo.ACTION_CLICK);
+
 
             // WA BIASA
             // trigger send click
